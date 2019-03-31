@@ -57,4 +57,27 @@ public class Triangle {
     public static Float getArea(Float s, Float a, Float b, Float c) {
         return (float) Math.sqrt( s * ( s - a ) * ( s - b ) * ( s - c ));
     }
+
+    public String toString() {
+        
+        String output = "";
+
+        output += "--- This object is of type: \t\t" + this.type + "\n"; // Display the type
+        output += "--- Side 1 (a) length in cm: \t\t" + String.valueOf(this.a) + "\n"; // Display Side 1 (a)
+        output += "--- Side 2 (b) length in cm: \t\t" + String.valueOf(this.b) + "\n"; // Display Side 2 (b)
+        output += "--- Side 3 (c) length in cm: \t\t" + String.valueOf(this.c) + "\n"; // Display Side 3 (c)
+        output += "--- Angle 1 (A) value in deg: \t\t" + String.valueOf(this.A) + "\n"; // Display Angle 1 (A)
+        output += "--- Angle 2 (B) value in deg: \t\t" + String.valueOf(this.B) + "\n"; // Display Angle 2 (B)
+        output += "--- Angle 3 (C) value in deg: \t\t" + String.valueOf(this.C) + "\n"; // Display Angle 3 (C)
+        output += "--- Perimeter value in cm: \t\t" + String.valueOf(this.perimeter) + "\n"; // Display Perimeter
+        output += "--- Semiperimeter value in cm: \t\t" + String.valueOf(this.semiperimeter) + "\n"; // Display Semiperimeter
+        output += "--- Area value in cm^2: \t\t" + String.valueOf(this.area) + "\n"; // Display Area
+        output += "--- Inradius length in cm: \t\t" + String.valueOf(this.inradius) + "\n"; // Display Inradius
+        output += "--- Circumradius length in cm: \t\t" + String.valueOf(this.circumradius) + "\n"; // Display Circumradius
+
+
+
+
+        return output;
+    }
 }
