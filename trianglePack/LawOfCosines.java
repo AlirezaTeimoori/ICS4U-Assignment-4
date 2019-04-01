@@ -1,4 +1,7 @@
 /*
+ *
+ * Imported Class From Github ==> 
+ * 
  * Using the law of cosines, these functions return the angles of a triangle
  * based on the size of all three sides. Or the length of a side given its opposite angle
  * and the length of the other two sides.
@@ -30,7 +33,7 @@ public class LawOfCosines
 
   // get the length of side a given angle A and sides b and c
   public static float getSideA(float A, float b, float c) {
-    return (float) Math.sqrt(Math.pow(b, 2) + Math.pow(c, 2) - 2 * b * c * Math.cos(A));
+    return (float) Math.sqrt((Math.pow(b, 2)) + Math.pow(c, 2) - 2 * b * c * Math.cos(A));
   }
   
   // get the length of side b given angle B and sides a and c
