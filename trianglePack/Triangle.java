@@ -27,6 +27,9 @@ public class Triangle {
     private Float       perimeter; // The sum of the 3 sides
     private Float   semiperimeter; // The perimeter devided by 2
     private Float            area; // The area of the Triangle
+    private Float         heightA; // The height, a being the base
+    private Float         heightB; // The height, b being the base
+    private Float         heightC; // The height, c being the base
     private Float        inradius; // The radius of the inner circle
     private Float    circumradius; // The radius of the circumcircle
     private String          type ; // To print the type in the end
@@ -39,6 +42,7 @@ public class Triangle {
         this.b = (float) (Math.round( side2 * 100.0 ) / 100.0);
         this.c = (float) (Math.round( side3 * 100.0 ) / 100.0);
 
+        
         // Calculate and set the angles to the corresponding values (if they are empty):
         this.A = (mainApp.getAngle1() == null) ? (float) Math.toDegrees(LawOfCosines.getAngleA(this.a, this.b, this.c)) : mainApp.getAngle1();
         this.B = (mainApp.getAngle2() == null) ? (float) Math.toDegrees(LawOfCosines.getAngleB(this.a, this.b, this.c)) : mainApp.getAngle2();
@@ -57,6 +61,11 @@ public class Triangle {
         this.perimeter = (float) (Math.round( getPerimeter(this.a, this.b, this.c) * 100.0 ) / 100.0);
         this.semiperimeter = (float) (Math.round( (this.perimeter / 2) * 100.0 ) / 100.0);
         this.area = (float) (Math.round( getArea(this.semiperimeter, this.a, this.b, this.c) * 100.0 ) / 100.0);
+
+        // Calculate and set each of the heights:
+        this.heightA = (float) (Math.round( (2 * this.area / this.a) * 100.0 ) / 100.0);
+        this.heightB = (float) (Math.round( (2 * this.area / this.b) * 100.0 ) / 100.0);
+        this.heightC = (float) (Math.round( (2 * this.area / this.c) * 100.0 ) / 100.0);
 
         // Calculate and set inradius and circumradius:
         this.inradius = (float) (Math.round( getInradius(this.semiperimeter, this.a, this.b, this.c) * 100.0 ) / 100.0);
@@ -145,6 +154,9 @@ public class Triangle {
         output += "--- Perimeter value in cm: \t\t" + String.valueOf(this.perimeter) + "\n"; // Display Perimeter
         output += "--- Semiperimeter value in cm: \t\t" + String.valueOf(this.semiperimeter) + "\n"; // Display Semiperimeter
         output += "--- Area value in cm^2: \t\t" + String.valueOf(this.area) + "\n"; // Display Area
+        output += "--- Height (a) length in cm: \t\t" + String.valueOf(this.heightA) + "\n"; // Display HeightA
+        output += "--- Height (b) length in cm: \t\t" + String.valueOf(this.heightB) + "\n"; // Display HeightB
+        output += "--- Height (c) length in cm: \t\t" + String.valueOf(this.heightC) + "\n"; // Display HeightC
         output += "--- Inradius length in cm: \t\t" + String.valueOf(this.inradius) + "\n"; // Display Inradius
         output += "--- Circumradius length in cm: \t\t" + String.valueOf(this.circumradius) + "\n"; // Display Circumradius
 
