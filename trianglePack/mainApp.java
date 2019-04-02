@@ -55,6 +55,7 @@ public class mainApp {
 
 
         switch (operationKey) {
+
             case "1":
             case "SSS":
 
@@ -114,7 +115,6 @@ public class mainApp {
                 System.out.println("\n--- Thank you for entering the 3 sides ---");
 
                 side3 = LawOfCosines.getSideC(angle3, side1, side2);
-                //side3 = 0;
 
                 break;
             
@@ -141,10 +141,11 @@ public class mainApp {
                     break;
                 }
 
+                // Calculate the required pieces of the triangle:
                 angle3 = 180 - angle1 - angle2;
                 side2  = (float) (side3 * Math.sin(Math.toRadians(angle2)) / Math.sin(Math.toRadians(angle3)));
-                // side1  = LawOfCosines.getSideA(angle1, side2, side3);
                 side1  = (float) ( side2 * Math.sin(Math.toRadians(angle1)) / Math.sin(Math.toRadians(angle2)) );
+                // side1  = LawOfCosines.getSideA(angle1, side2, side3);
 
                 break;
 
@@ -171,10 +172,11 @@ public class mainApp {
                     break;
                 }
 
+                // Calculate the required pieces of the triangle:               
                 angle2 = (float) Math.toDegrees(Math.asin( side2 * Math.sin(Math.toRadians(angle1)) / side1));
                 angle3 = 180 - angle1 - angle2;
-                //side3  = LawOfCosines.getSideC(angle3, side1, side2);
                 side3  = (float) ( side2 * Math.sin(Math.toRadians(angle3)) / Math.sin(Math.toRadians(angle2)) );
+                //side3  = LawOfCosines.getSideC(angle3, side1, side2);
 
                 break;
 
@@ -201,10 +203,11 @@ public class mainApp {
                     break;
                 }
 
+                // Calculate the required pieces of the triangle:
                 angle3 = 180 - angle1 - angle2;
                 side2  = (float) ( side1 * Math.sin(Math.toRadians(angle2)) / Math.sin(Math.toRadians(angle1)) );
-                //side3  = LawOfCosines.getSideC(angle3, side1, side2);
                 side3 = (float) ( side2 * Math.sin(Math.toRadians(angle3)) / Math.sin(Math.toRadians(angle2)) );
+                //side3  = LawOfCosines.getSideC(angle3, side1, side2);
 
 
                 break;
@@ -213,11 +216,15 @@ public class mainApp {
         
         try {
 
+            // Now to solve the triangle:
             triangle.SSS(side1, side2, side3); // Run SSS() function inputing the 3 sides
+
+            // Output:
             System.out.println(triangle.toString()); // Print out triangle properties
 
         } catch (Exception e) {
 
+            // Print error message:
             System.out.println("Please enter a valid input next time!");
         }
             

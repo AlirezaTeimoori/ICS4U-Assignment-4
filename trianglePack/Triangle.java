@@ -13,7 +13,6 @@
 
 // This is the Triangle class
 
-import java.math.*;
 
 public class Triangle {
 
@@ -71,7 +70,7 @@ public class Triangle {
         this.inradius = (float) (Math.round( getInradius(this.semiperimeter, this.a, this.b, this.c) * 100.0 ) / 100.0);
         this.circumradius = (float) (Math.round( getCircimradius(this.area, this.a, this.b, this.c) * 100.0 ) / 100.0);
 
-        this.type = setType();
+        this.type = getType();
     }
 
     // getPerimeter() function calculates and returns the perimeter using the inputed data:
@@ -95,9 +94,10 @@ public class Triangle {
         return (float) a * b * c / (4 * area);
     }
 
-    public String setType() {
+    // getType() function sets the appropriate type for the triangle
+    public String getType() {
 
-        String type = "";
+        String type = ""; // Start with an empty String
 
         if (this.A < 90 && this.B < 90 && this.C < 90) { // If all of the angles are less than 90
 
@@ -142,7 +142,7 @@ public class Triangle {
     // toString() function returns the final output in an organized way:
     public String toString() {
         
-        String output = "\n";
+        String output = "\n"; // Start with a linespace
 
         output += "--- The type of the triangle: \t\t" + this.type + "\n"; // Display the type
         output += "--- Side 1 (a) length in cm: \t\t" + String.valueOf(this.a) + "\n"; // Display Side 1 (a)

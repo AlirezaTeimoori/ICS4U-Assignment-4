@@ -1,5 +1,4 @@
 /*
- *
  * Imported Class From Github ==> 
  * 
  * Using the law of cosines, these functions return the angles of a triangle
@@ -15,6 +14,7 @@
 */
 public class LawOfCosines
 {
+  
   // get angle A in radians given sides a, b, and c
   public static float getAngleA(float a, float b, float c) {
     return (float) Math.acos((Math.pow(a, 2) - Math.pow(b, 2) - Math.pow(c, 2)) / (-2 * b * c));
