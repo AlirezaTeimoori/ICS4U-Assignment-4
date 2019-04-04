@@ -114,7 +114,7 @@ public class mainApp {
                 // Final String before printing the triangle:
                 System.out.println("\n--- Thank you for entering the 3 sides ---");
 
-                side3 = LawOfCosines.getSideC(angle3, side1, side2);
+                side3 = LawOfCosines.getSideB((float)Math.toRadians(angle3), side1, side2);
 
                 break;
             
